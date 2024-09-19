@@ -1,0 +1,41 @@
+.register-container {
+    background-color: #000000; /* Açık mavi arka plan */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-container h2 {
+    text-align: center;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container label {
+    margin: 10px 0 5px;
+}
+
+.register-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-container button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff; /* Mavi buton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background-color: #0056b3; /* Buton hover rengi */
+}
