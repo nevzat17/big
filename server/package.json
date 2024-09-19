@@ -4,11 +4,19 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "dependencies": {
         "express": "^4.17.1",
         "sequelize": "^6.6.2",
         "pg": "^8.7.1"  
+    },
+
+    "devDependencies": {
+        "jest": "29.7.0",
+        "supertest": "^29.7.0",
+        "@testing-library/react": "^13.0.0",  
+        "@testing-library/jest-dom": "^5.0.0"  
     }
+
 }

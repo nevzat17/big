@@ -8,11 +8,16 @@
         "react-scripts": "^5.0.0",
         "react-router-dom": "^6.0.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "jest":"29.7.0",
+        "@testing-library/react": "^13.0.0",  
+        "@testing-library/jest-dom": "^5.0.0"  
+    },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "test": "jest"
+        
     }
 }
