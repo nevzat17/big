@@ -47,17 +47,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        success {
-            mail to: 'your_email@example.com',
-                 subject: "Jenkins Build Success: ${currentBuild.fullDisplayName}",
-                 body: "Build was successful!"
-        }
-        failure {
-            mail to: 'your_email@example.com',
-                 subject: "Jenkins Build Failure: ${currentBuild.fullDisplayName}",
-                 body: "Build failed!"
-        }
-    }
 }
