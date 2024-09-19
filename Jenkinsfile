@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/username/repo.git' // GitHub repository URL
+                git 'https://github.com/nevzat17/big.git' // GitHub repository URL
             }
         }
 
