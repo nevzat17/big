@@ -12,8 +12,8 @@ pipeline {
             steps {
                 script {
                     dir('test') { // Frontend dizinine gidin
-                        sh 'npm install'  // Gerekli bağımlılıkları yükleyin
-                        sh 'npm test -- --watchAll=false' // Testleri çalıştırın
+                        bat 'npm install'  // Gerekli bağımlılıkları yükleyin
+                        bat 'npm test -- --watchAll=false' // Testleri çalıştırın
                     }
                 }
             }
@@ -23,8 +23,8 @@ pipeline {
             steps {
                 script {
                     dir('test-backend') { // Backend dizinine gidin
-                        sh 'npm install'  // Gerekli bağımlılıkları yükleyin
-                        sh 'npm test'     // Testleri çalıştırın
+                        bat 'npm install'  // Gerekli bağımlılıkları yükleyin
+                        bat 'npm test'     // Testleri çalıştırın
                     }
                 }
             }
@@ -33,7 +33,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'docker-compose -f docker-compose.yml up --build -d'
+                    bat 'docker-compose -f docker-compose.yml up --build -d'
                 }
             }
         }
