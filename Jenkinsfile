@@ -4,15 +4,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                  git branch: 'main', url: 'https://github.com/nevzat17/big.git'
+                git branch: 'main', url: 'https://github.com/nevzat17/big.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    bat 'docker-compose -f docker-compose.yml up --build -d'
+                }
             }
         }
 
         stage('Test Frontend') {
             steps {
                 script {
-                    dir('test') { // Frontend dizinine gidin
-                        bat 'npm install'  // Gerekli bağımlılıkları yükleyin
+                    dir('test') {
                         bat 'npm test -- --watchAll=false' // Testleri çalıştırın
                     }
                 }
@@ -22,18 +29,9 @@ pipeline {
         stage('Test Backend') {
             steps {
                 script {
-                    dir('test-backend') { // Backend dizinine gidin
-                        bat 'npm install'  // Gerekli bağımlılıkları yükleyin
-                        bat 'npm test'     // Testleri çalıştırın
+                    dir('test-backend') {
+                        bat 'npm test' // Testleri çalıştırın
                     }
-                }
-            }
-        }
-
-        stage('Build') {
-            steps {
-                script {
-                    bat 'docker-compose -f docker-compose.yml up --build -d'
                 }
             }
         }
